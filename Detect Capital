@@ -1,0 +1,24 @@
+class Solution {
+    public boolean detectCapitalUse(String word) {
+        int count = 0;
+
+        for (int i = 0; i < word.length(); i++) {
+            if (Character.isUpperCase(word.charAt(i))) {
+                count++;
+            }
+        }
+
+        // All letters are uppercase
+        if (count == word.length()) {
+            return true;
+        }
+
+        // No letters are uppercase
+        if (count == 0) {
+            return true;
+        }
+
+        // Only the first letter is uppercase
+        return count == 1 && Character.isUpperCase(word.charAt(0));
+    }
+}
